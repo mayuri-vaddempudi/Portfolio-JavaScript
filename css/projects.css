@@ -228,8 +228,5 @@
         grid-template-columns: 1fr;
     }
 
-    .project-card .project-footer {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+
 }

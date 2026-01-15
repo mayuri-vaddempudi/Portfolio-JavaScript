@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/projects.css" />
     <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="javascript/github.js" defer></script>
 </head>
 
 <body>
@@ -84,22 +85,6 @@
         <!-- Footer Bottom -->
         <div class="footer-bottom">
             <p>© 2026 Mayuri Vaddempudi</p>
-            <!-- Scripts -->
-            <script src="javascript/github.js"></script>
-            <script>
-                // Scroll animation
-                const animateElements = document.querySelectorAll('[data-animate]');
-                const observer = new IntersectionObserver(entries => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('animate');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.2 });
-
-                animateElements.forEach(el => observer.observe(el));
-            </script>
 </body>
 
 </html>

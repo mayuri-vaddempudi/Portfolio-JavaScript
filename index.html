@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/home.css" />
     <link rel="icon" href="images/favicon.png">
     <link rel="preload" as="image" href="images/profile.jpeg" fetchpriority="high">
+    <script src="javascript/home.js" defer></script>
 
 </head>
 
@@ -36,7 +37,7 @@
 
         <!-- Hero Section -->
         <section class="hero">
-            <img src="images/profile.jpeg" alt="Mayuri Vaddempudi, Frontend Developer" class="profile" loading="eager"
+            <img src="images/profile.webp" alt="Mayuri Vaddempudi, Frontend Developer" class="profile" loading="eager"
                 fetchpriority="high">
 
             <div>
@@ -44,7 +45,8 @@
                 <h3>Frontend Developer</h3>
                 <p>
                     Based in Stockholm, I build modern, accessible web applications using React, Angular, and
-                    TypeScript. Passionate about responsive UI, component-based design, and web performance.
+                    TypeScript. I’m passionate about creating responsive, user-friendly interfaces, component-based
+                    design, and high-performance web experiences that scale.
                 </p>
                 <a class="btn btn-outline" href="resume/Mayuri_Vaddempudi_Resume.pdf" download>Download Resume</a>
             </div>
@@ -55,8 +57,11 @@
             <h2>About Me</h2>
             <p>
                 I’m a Frontend Developer based in Stockholm with 4+ years of experience building modern, scalable, and
-                accessible web applications.
-                I collaborate with international clients and specialize in Angular, React, Next.js, and TypeScript.
+                accessible web applications. I collaborate with international clients and specialize in Angular, React,
+                Next.js, and TypeScript. I am passionate about creating responsive, user-friendly interfaces, optimizing
+                web performance, and following best practices for maintainable, clean code. I enjoy turning complex
+                problems into elegant solutions and continuously learning emerging technologies to deliver high-quality
+                web experiences.
             </p>
         </section>
 
@@ -218,22 +223,6 @@
         <div class="footer-bottom">
             <p>© 2026 Mayuri Vaddempudi</p>
 
-
-            <!-- Scroll Animation JS -->
-            <script>
-                const animateElements = document.querySelectorAll('[data-animate]');
-
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('animate');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.2 });
-
-                animateElements.forEach(el => observer.observe(el));
-            </script>
 </body>
 
 </html>

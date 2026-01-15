@@ -11,7 +11,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    margin: 4rem 0;
+    margin: 2rem 0;
 }
 
 .hero .profile {
@@ -65,7 +65,7 @@
 /* ================= ABOUT SECTION ================= */
 .about-me {
     text-align: center;
-    margin: 4rem 0;
+    margin: 2rem 0;
 }
 
 .about-me h2 {
@@ -75,39 +75,12 @@
 }
 
 .about-me p {
-    max-width: 700px;
     margin: 0 auto;
     font-size: 1.1rem;
     color: var(--text-light);
     line-height: 1.7;
 }
 
-/* ================= STATS SECTION ================= */
-.stat {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.stat:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.stat i {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.stat h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-dark);
-}
-
-.stat p {
-    font-size: 1rem;
-    color: #6b7280;
-}
 
 /* ================= PROJECTS CTA ================= */
 .projects-cta {
@@ -137,19 +110,6 @@
 [data-animate].animate {
     opacity: 1;
     transform: translateY(0) scale(1);
-}
-
-/* Stagger effects */
-.stats .stat:nth-child(1) {
-    transition-delay: 0.1s;
-}
-
-.stats .stat:nth-child(2) {
-    transition-delay: 0.2s;
-}
-
-.stats .stat:nth-child(3) {
-    transition-delay: 0.3s;
 }
 
 /* ================= PROJECTS GRID ================= */
@@ -184,7 +144,7 @@
 /* ================= SKILLS TEASER ================= */
 .skills-teaser {
     text-align: center;
-    margin: 4rem 0;
+    margin: 2rem 0;
 }
 
 .skills-icons {
@@ -195,17 +155,31 @@
     margin-top: 1.5rem;
 }
 
-.skill {
-    background-color: #f3f4f6;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
 .skill:hover {
     background-color: var(--primary-color);
     color: #fff;
+}
+
+.skill {
+    position: relative;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    /* space for check */
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+/* Check mark */
+.skill::before {
+    content: "✓";
+    position: absolute;
+    left: 0.75rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1rem;
 }
 
 /* ================= ACCESSIBILITY ================= */
