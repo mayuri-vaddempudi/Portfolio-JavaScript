@@ -5,7 +5,7 @@
     --bg-card: #f9fafb;
 }
 
-/* Hero Section */
+/* ================= HERO SECTION ================= */
 .hero {
     display: flex;
     align-items: center;
@@ -30,14 +30,14 @@
     color: var(--text-light);
 }
 
-
 .hero div p {
     font-size: 1.1rem;
-    color: #4b5563;
+    color: var(--text-light);
     line-height: 1.7;
     margin-bottom: 1.5rem;
 }
 
+/* ================= BUTTONS ================= */
 .btn:hover {
     transform: translateY(-2px);
 }
@@ -48,14 +48,13 @@
     background: transparent;
 }
 
-
 .btn-outline:hover {
-    background-color: #4F46E5;
+    background-color: var(--primary-color);
     color: #fff;
 }
 
 .btn-primary {
-    background-color: #4F46E5;
+    background-color: var(--primary-color);
     color: #fff;
 }
 
@@ -63,7 +62,7 @@
     background-color: #4338ca;
 }
 
-/* About Me Section */
+/* ================= ABOUT SECTION ================= */
 .about-me {
     text-align: center;
     margin: 4rem 0;
@@ -72,18 +71,21 @@
 .about-me h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #111827;
+    color: var(--text-dark);
 }
 
 .about-me p {
     max-width: 700px;
     margin: 0 auto;
     font-size: 1.1rem;
-    color: #4b5563;
+    color: var(--text-light);
     line-height: 1.7;
 }
 
-/* Stats Section */
+/* ================= STATS SECTION ================= */
+.stat {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
 .stat:hover {
     transform: translateY(-5px);
@@ -92,14 +94,14 @@
 
 .stat i {
     font-size: 3rem;
-    color: #4F46E5;
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
 .stat h3 {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
-    color: #111827;
+    color: var(--text-dark);
 }
 
 .stat p {
@@ -107,7 +109,7 @@
     color: #6b7280;
 }
 
-/* Projects CTA Section */
+/* ================= PROJECTS CTA ================= */
 .projects-cta {
     text-align: center;
     margin: 5rem 0;
@@ -116,17 +118,16 @@
 .projects-cta h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #111827;
+    color: var(--text-dark);
 }
 
 .projects-cta p {
     font-size: 1.1rem;
     margin-bottom: 2rem;
-    color: #4b5563;
+    color: var(--text-light);
 }
 
-
-/* Scroll Animation */
+/* ================= SCROLL ANIMATION ================= */
 [data-animate] {
     opacity: 0;
     transform: translateY(30px) scale(0.95);
@@ -138,8 +139,8 @@
     transform: translateY(0) scale(1);
 }
 
-/* Stagger Stats Cards */
-.stats .stat {
+/* Stagger effects */
+.stats .stat:nth-child(1) {
     transition-delay: 0.1s;
 }
 
@@ -151,18 +152,7 @@
     transition-delay: 0.3s;
 }
 
-[data-animate]:nth-child(1) {
-    transition-delay: 0.1s;
-}
-
-[data-animate]:nth-child(2) {
-    transition-delay: 0.2s;
-}
-
-[data-animate]:nth-child(3) {
-    transition-delay: 0.3s;
-}
-
+/* ================= PROJECTS GRID ================= */
 .projects-grid {
     display: flex;
     gap: 2rem;
@@ -177,7 +167,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     text-align: center;
     width: 250px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
@@ -191,12 +181,13 @@
     margin-bottom: 0.5rem;
 }
 
+/* ================= SKILLS TEASER ================= */
 .skills-teaser {
     text-align: center;
     margin: 4rem 0;
 }
 
-.skills-teaser .skills-icons {
+.skills-icons {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -204,24 +195,26 @@
     margin-top: 1.5rem;
 }
 
-.skills-teaser .skill {
+.skill {
     background-color: #f3f4f6;
     padding: 0.5rem 1rem;
     border-radius: 8px;
     font-weight: 500;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
 }
 
-.skills-teaser .skill:hover {
+.skill:hover {
     background-color: var(--primary-color);
     color: #fff;
 }
 
+/* ================= ACCESSIBILITY ================= */
 a:focus-visible {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
 
+/* ================= PROJECT SCROLL ================= */
 .projects-scroll {
     overflow: hidden;
     width: 100%;
@@ -234,96 +227,21 @@ a:focus-visible {
     animation: scrollProjects 25s linear infinite;
 }
 
-.contact-details {
-    margin-top: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    font-size: 0.95rem;
-    color: var(--text-light);
+.projects-scroll:hover .projects-track {
+    animation-play-state: paused;
 }
 
-.contact-details i {
-    color: var(--primary-color);
-    margin-right: 0.5rem;
+@keyframes scrollProjects {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
 }
 
-.contact-details a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.contact-details a:hover {
-    text-decoration: underline;
-}
-
-.contact-details {
-    margin-top: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    font-size: 0.95rem;
-    color: var(--text-light);
-}
-
-.contact-details p {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-}
-
-.contact-details i {
-    color: var(--primary-color);
-    font-size: 1rem;
-}
-
-.contact-details a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.contact-details a:hover {
-    text-decoration: underline;
-}
-
-.contact-intro {
-    font-size: 1.1rem;
-    color: var(--text-light);
-    margin-bottom: 2rem;
-}
-
-.contact-details {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.contact-item {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    font-size: 1rem;
-    color: var(--text-light);
-}
-
-.contact-item i {
-    color: var(--primary-color);
-    font-size: 1.2rem;
-}
-
-.contact-item a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.contact-item a:hover {
-    text-decoration: underline;
-}
-
+/* ================= CONTACT SECTION ================= */
 .contact-intro {
     font-size: 1.1rem;
     color: var(--text-light);
@@ -355,19 +273,19 @@ a:focus-visible {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .contact-item a:hover {
-    text-decoration: underline;
     color: #4338ca;
+    text-decoration: underline;
 }
 
 .contact-btn {
     padding: 0.8rem 2rem;
     font-weight: 500;
     border-radius: 8px;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
 }
 
 .contact-btn:hover {
@@ -375,40 +293,11 @@ a:focus-visible {
     background-color: #4338ca;
 }
 
-/* Responsive: stack CTA and contact info nicely on small screens */
-@media (max-width: 480px) {
-    .contact-item {
-        flex-direction: row;
-        justify-content: center;
-        gap: 0.5rem;
-        font-size: 0.95rem;
-    }
-}
-
-@keyframes scrollProjects {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-/* Pause on hover */
-.projects-scroll:hover .projects-track {
-    animation-play-state: paused;
-}
-
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;
         text-align: center;
-    }
-
-    .stats {
-        flex-direction: column;
-        align-items: center;
     }
 
     .hero .profile {
@@ -422,5 +311,12 @@ a:focus-visible {
 
     .projects-track {
         animation-duration: 40s;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-item {
+        gap: 0.5rem;
+        font-size: 0.95rem;
     }
 }

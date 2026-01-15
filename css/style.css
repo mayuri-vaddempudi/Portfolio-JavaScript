@@ -1,3 +1,4 @@
+/* Global Reset */
 * {
     box-sizing: border-box;
 }
@@ -10,6 +11,7 @@ body {
     line-height: 1.6;
 }
 
+/* Layout */
 .container {
     max-width: 1000px;
     margin: auto;
@@ -17,6 +19,7 @@ body {
     text-align: center;
 }
 
+/* Header */
 header {
     background: #1e293b;
     border-bottom: 1px solid #e5e7eb;
@@ -46,12 +49,13 @@ header {
     color: #2563eb;
 }
 
+/* Buttons */
 .btn {
     display: inline-block;
-    padding: .6rem 1.2rem;
+    padding: 0.6rem 1.2rem;
     background: #2563eb;
     color: white;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     text-decoration: none;
 }
 
@@ -60,30 +64,27 @@ header {
     outline-offset: 2px;
 }
 
-.btn-primary:active {
-    transform: translateY(1px);
-}
-
+.btn-primary:active,
 .btn-outline:active {
     transform: translateY(1px);
 }
 
-
+/* Grid & Cards */
 .grid {
     display: grid;
     gap: 1rem;
 }
 
 .skills li {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
 }
 
 .card {
     background: #fff;
     padding: 1rem;
-    border-radius: .8rem;
+    border-radius: 0.8rem;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    transition: transform .2s;
+    transition: transform 0.2s ease;
 }
 
 .card:hover {
@@ -93,7 +94,7 @@ header {
 .links {
     display: flex;
     gap: 1rem;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
 }
 
 .links a {
@@ -105,22 +106,19 @@ header {
 /* Footer */
 .footer {
     background-color: #1e293b;
-    /* dark gray/navy */
     color: #cbd5e1;
-    /* light gray text */
-    padding: 3rem 1rem 1.5rem 1rem;
+    padding: 3rem 1rem 1.5rem;
     font-size: 0.95rem;
 }
 
 .footer a {
     color: #cbd5e1;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .footer a:hover {
     color: #4F46E5;
-    /* primary color */
 }
 
 .footer-container {
@@ -132,17 +130,18 @@ header {
     padding-bottom: 2rem;
 }
 
+/* Footer Brand */
 .footer-brand h2 {
-    margin: 0 0 0.3rem 0;
+    margin: 0 0 0.3rem;
     color: #fff;
 }
 
 .footer-brand p {
     margin: 0;
     color: #94a3b8;
-    /* softer text */
 }
 
+/* Footer Links */
 .footer-links ul {
     list-style: none;
     padding: 0;
@@ -160,6 +159,7 @@ header {
     font-size: 1.1rem;
 }
 
+/* Footer Contact */
 .footer-contact p {
     display: flex;
     align-items: center;
@@ -167,40 +167,21 @@ header {
     margin-bottom: 0.5rem;
 }
 
+/* Footer Social Icons */
 .footer-social {
     gap: 1rem;
     margin-top: 0.5rem;
 }
 
 .footer-social a {
-    font-size: 1.4rem;
-    transition: transform 0.3s, color 0.3s;
-}
-
-.footer-social a {
-    color: #fff;
-    /* or your theme color */
-    margin-right: 15px;
     font-size: 1.5rem;
-    transition: color 0.3s;
-}
-
-.footer-social a:hover {
-    color: #00acee;
-    /* change color on hover */
-}
-
-.footer-social i {
-    font-size: 1.5rem;
-    /* big enough to see */
-    color: #4F46E5;
-    /* primary color */
-    display: inline-block;
+    color: #cbd5e1;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .footer-social a:hover {
     color: #4F46E5;
-    transform: scale(1.2);
+    transform: scale(1.15);
 }
 
 /* Footer Bottom */

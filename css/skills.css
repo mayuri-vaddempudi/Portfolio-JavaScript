@@ -40,12 +40,6 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Skill Icon */
-.skill-card i {
-    font-size: 2rem;
-    color: #4F46E5;
-}
-
 /* Skill Label */
 .skill-card span {
     font-weight: 500;
@@ -83,37 +77,6 @@
     color: #111827;
 }
 
-.skill-card i {
-    font-size: 2.5rem;
-    /* slightly bigger */
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.skill-card:hover i {
-    color: #4338ca;
-    /* darker purple on hover */
-    transform: scale(1.2);
-    transition: all 0.3s ease;
-}
-
-.skill-card {
-    background-color: #f9fafb;
-    padding: 1.2rem;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.skill-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
 .skill-logo {
     width: 50px;
     height: 50px;
@@ -121,16 +84,7 @@
 }
 
 /* Scroll Animation */
-[data-animate] {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
 
-[data-animate].animate {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 .responsibilities-section {
     text-align: center;
