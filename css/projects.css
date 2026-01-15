@@ -1,0 +1,235 @@
+/* Intro Section */
+.projects-intro {
+    text-align: center;
+    margin: 4rem 0 2rem 0;
+}
+
+.projects-intro h2 {
+    font-size: 2rem;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.projects-intro p {
+    font-size: 1.1rem;
+    color: #4b5563;
+}
+
+/* Projects Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0 4rem 0;
+}
+
+/* Project Card Content */
+
+.project-card p {
+    font-size: 1rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+/* Project Footer (GitHub / Live / Language / Stars) */
+.project-card .project-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    font-size: 0.9rem;
+    align-items: center;
+    margin: 0 5px;
+}
+
+.project-card .project-footer a {
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #4F46E5;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.project-card .project-footer a:hover {
+    background-color: #4338ca;
+    transform: translateY(-2px);
+}
+
+/* Disabled link style */
+.project-card .project-footer .disabled {
+    background-color: #d1d5db;
+    color: #6b7280;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+}
+
+/* GitHub Stars & Language Badge */
+.project-card .project-footer span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: #4F46E5;
+}
+
+/* Icons spacing */
+.project-card .project-footer i {
+    font-size: 0.9rem;
+}
+
+/* Scroll Animation */
+[data-animate] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+[data-animate].animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 1.5rem;
+    justify-content: space-between;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.project-content h3 {
+    margin-bottom: 0.5rem;
+    color: #111827;
+}
+
+.project-content p {
+    font-size: 1rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+
+
+/* Hide description initially */
+.project-description {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+/* Show description on hover */
+.project-card:hover .project-description {
+    opacity: 1;
+    max-height: 200px;
+}
+
+.project-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.05);
+    filter: brightness(0.6);
+}
+
+.project-description {
+    transform: translateY(10px);
+}
+
+.project-card:hover .project-description {
+    transform: translateY(0);
+}
+
+/* Image wrapper */
+.project-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
+
+/* Image */
+.project-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Overlay (hidden by default) */
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(30, 41, 59, 0.85);
+    /* matches footer color */
+    color: #f9fafb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Hover effects */
+.project-card:hover .project-img {
+    transform: scale(1.05);
+    filter: brightness(0.6);
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+/* Overlay text */
+.project-overlay p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.project-overlay p {
+    transform: translateY(10px);
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-overlay p {
+    transform: translateY(0);
+}
+
+/* Footer buttons */
+
+.project-footer a:hover {
+    background-color: #4338ca;
+    transform: translateY(-2px);
+}
+
+.project-footer .disabled {
+    background-color: #d1d5db;
+    color: #6b7280;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card .project-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

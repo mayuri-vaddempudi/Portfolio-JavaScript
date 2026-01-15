@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Mayuri Vaddempudi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="container nav">
+            <h1 class="logo">Mayuri Vaddempudi</h1>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a class="active" href="contact.html" aria-current="page">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container contact-section">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out for collaborations, projects, or just a friendly hello!</p>
+
+        <form id="contact-form" class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Your Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="Your Email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+
+        <div id="form-message"></div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container container">
+            <!-- Footer Logo / Branding -->
+            <div class="footer-brand">
+                <h2>Mayuri Vaddempudi</h2>
+                <p>Frontend Developer | Stockholm, Sweden</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p><i class="fa-solid fa-envelope"></i> <a
+                        href="mailto:mayurivaddempudi@gmail.com">mayurivaddempudi@gmail.com</a></p>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:+46701234567">+46 70 123 45 67</a></p>
+                <p><i class="fa-solid fa-location-dot"></i> Stockholm, Sweden</p>
+            </div>
+
+            <!-- Social Links -->
+            <div class="footer-social">
+                <h3>Social Links</h3>
+                <a href="https://github.com/mayuri-vaddempudi" target="_blank" rel="noopener noreferrer"
+                    aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/mayuri-vaddempudi" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="mailto:mayurivaddempudi@gmail.com" aria-label="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>© 2026 Mayuri Vaddempudi</p>
+
+            <!-- EmailJS Script -->
+
+            <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    emailjs.init("JNEnboO2ggw8dpHDZ"); // Public Key
+
+                    const form = document.getElementById('contact-form');
+                    const formMessage = document.getElementById('form-message');
+                    const submitBtn = form.querySelector("button[type='submit']");
+
+                    form.addEventListener('submit', function (e) {
+                        e.preventDefault();
+
+                        // Clear previous message
+                        formMessage.textContent = "";
+                        formMessage.className = "";
+                        formMessage.style.opacity = "0";
+
+                        // Disable button while sending
+                        submitBtn.disabled = true;
+                        submitBtn.textContent = "Sending...";
+
+                        const templateParams = {
+                            name: document.getElementById('name').value,
+                            email: document.getElementById('email').value,
+                            message: document.getElementById('message').value
+                        };
+
+                        emailjs.send('service_lylxh9j', 'template_tc7efmf', templateParams)
+                            .then(function (response) {
+                                console.log("EmailJS Success:", response);
+                                formMessage.textContent = "✅ Message sent successfully! Thank you.";
+                                formMessage.classList.add('success', 'show');
+                                formMessage.style.opacity = "1";
+                                form.reset();
+                            })
+                            .catch(function (error) {
+                                console.error("EmailJS Error:", error);
+                                formMessage.textContent = "❌ Oops! Something went wrong. Please try again.";
+                                formMessage.classList.add('error', 'show');
+                                formMessage.style.opacity = "1";
+                            })
+                            .finally(function () {
+                                submitBtn.disabled = false;
+                                submitBtn.textContent = "Send Message";
+                            });
+                    });
+                });
+            </script>
+
+            </script>
+</body>
+
+</html>

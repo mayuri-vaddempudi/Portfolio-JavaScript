@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Mayuri Vaddempudi</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/projects.css" />
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container nav">
+            <h1 class="logo">Mayuri Vaddempudi</h1>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="projects.html" aria-current="page">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="projects-intro" data-animate>
+            <h2>My Projects</h2>
+            <p>Here’s a selection of web applications and projects I’ve built. Click to view on GitHub.</p>
+        </section>
+
+        <section id="projects" class="grid" data-animate></section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container container">
+            <!-- Footer Logo / Branding -->
+            <div class="footer-brand">
+                <h2>Mayuri Vaddempudi</h2>
+                <p>Frontend Developer | Stockholm, Sweden</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <p><i class="fa-solid fa-envelope"></i> <a
+                        href="mailto:mayurivaddempudi@gmail.com">mayurivaddempudi@gmail.com</a></p>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:+46701234567">+46 70 123 45 67</a></p>
+                <p><i class="fa-solid fa-location-dot"></i> Stockholm, Sweden</p>
+            </div>
+
+            <!-- Social Links -->
+            <div class="footer-social">
+                <h3>Social Links</h3>
+                <a href="https://github.com/mayuri-vaddempudi" target="_blank" rel="noopener noreferrer"
+                    aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/mayuri-vaddempudi" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="mailto:mayurivaddempudi@gmail.com" aria-label="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>© 2026 Mayuri Vaddempudi</p>
+            <!-- Scripts -->
+            <script src="javascript/github.js"></script>
+            <script>
+                // Scroll animation
+                const animateElements = document.querySelectorAll('[data-animate]');
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.2 });
+
+                animateElements.forEach(el => observer.observe(el));
+            </script>
+</body>
+
+</html>
