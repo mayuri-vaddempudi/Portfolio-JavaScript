@@ -228,5 +228,18 @@
         grid-template-columns: 1fr;
     }
 
+    .project-overlay {
+        opacity: 1;
+        position: relative;
+        background: #1e293b;
+        color: #f9fafb;
+        inset: auto;
+        padding: 1rem;
+    }
+
+    .project-img {
+        filter: brightness(0.8);
+        transform: none;
+    }
 
 }
