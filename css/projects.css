@@ -222,6 +222,78 @@
     color: #6b7280;
 }
 
+/* ================= CLIENT EXPERIENCE ================= */
+.clients-experience {
+    margin: 4rem 0;
+    text-align: center;
+}
+
+.clients-experience h2 {
+    font-size: 2rem;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.clients-intro {
+    font-size: 1.1rem;
+    color: #4b5563;
+    margin-bottom: 2.5rem;
+}
+
+/* Grid */
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+/* Card */
+.client-card {
+    background: #fff;
+    padding: 1.8rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.client-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.client-card h3 {
+    margin-bottom: 0.3rem;
+    color: #111827;
+}
+
+.client-meta {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.client-card p {
+    margin: 1rem 0;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+/* Tech tags */
+.client-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.client-tech span {
+    background: #f3f4f6;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #111827;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .grid {
